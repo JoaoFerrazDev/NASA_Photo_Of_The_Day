@@ -20,11 +20,16 @@
             <tr>
                 <th>Date</th>
                 <th>Image</th>
+                <th>Explanation</th>
             </tr>
             {% for image in apod_images %}
                 <tr>
                     <td>{{ image.date }}</td>
                     <td><img src="{{ image.url }}" alt="{{ image.title }}"></td>
+                    <td>
+                        <p class="image-explanation">{{ image.title }}</p>
+                        <p>{{ image.explanation }}</p>
+                    </td>
                 </tr>
             {% endfor %}
         </table>

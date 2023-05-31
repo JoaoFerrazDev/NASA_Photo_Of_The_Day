@@ -65,6 +65,8 @@ def sanitize_filename(filename):
 def save_images_to_s3(apod_images):
     s3 = boto3.client('s3', region_name="eu-west-1")
 
+    print(apod_images)
+
     for image in apod_images:
         image_url = image['url']
         image_title = image['title']
